@@ -40,7 +40,7 @@ function Post({ data }) {
     return (
         <CardPost>
             <header>
-                <img src={imgProfile} />
+                <img src={imgProfile} alt="Foto Perfil"/>
                 <div>
                     <p>por {signedUser.studentId === data.Student.id ? "você" : data.Student.name}</p>
                     <span>em {format(new Date(data.created_at), "dd/MM/yyyy 'às' HH:mm")}</span>
@@ -61,7 +61,7 @@ function Post({ data }) {
                     {
                         coments.length === 0 ?
                             "Comente primeiro!" :
-                            `${coments.length} Comentário${coments.length > 1 && "s" , ""}`
+                            `${coments.length} Comentário${coments.length > 1 && "s"}`
                     }
                 </h3>
                 {showComents && (
@@ -85,7 +85,7 @@ function Coment({ coment }) {
     return (
         <CardComent>
             <header>
-                <img src={coment.Student?.image} />
+                <img src={coment.Student?.image} alt="Foto perfil aluno"/>
                 <div>
                     <p>{coment.Student?.name}</p>
                     <span>{format(new Date(coment.created_at || coment.createdAt), "dd/MM/yyyy 'às' HH:mm")}</span>

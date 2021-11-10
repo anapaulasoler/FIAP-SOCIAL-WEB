@@ -42,6 +42,7 @@ function Feed() {
         }
     }
 
+    
     useEffect(() => {
         loadPosts();
     }, []);
